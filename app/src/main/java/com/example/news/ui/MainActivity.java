@@ -32,15 +32,13 @@ public class MainActivity extends AppCompatActivity {
     newsViewModel=new ViewModelProvider(this).get(NewsViewModel.class);
     recyclerView=findViewById(R.id.main_recycler_view);
 
-   newsViewModel.getNews();
-   newsViewModel.mutableLiveData.observe(this, new Observer<List<Article>>() {
-    @Override
-    public void onChanged(List<Article> articles) {
-        adaptor=new Adaptor(articles);
-        recyclerView.setAdapter(adaptor);
-
-    }
-});
+   newsViewModel.getNews().observe(this, new Observer<List<Article>>() {
+       @Override
+       public void onChanged(List<Article> articles) {
+           adaptor=new Adaptor(articles);
+           recyclerView.setAdapter(adaptor);
+       }
+   });
 
     }
 }

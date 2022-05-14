@@ -2,6 +2,7 @@ package com.example.news.network;
 
 import android.widget.Toast;
 
+import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
 
@@ -15,9 +16,9 @@ import retrofit2.Callback;
 import retrofit2.Response;
 
 public class NewsViewModel extends ViewModel {
-    public MutableLiveData<List<Article>> mutableLiveData=new MutableLiveData();
+    private final MutableLiveData<List<Article>> mutableLiveData=new MutableLiveData();
 
-    public void getNews()
+    public LiveData<List<Article>> getNews()
     {
         RetrofitClent.getInstance().getnews().enqueue(new Callback<News>() {
             @Override
@@ -30,6 +31,7 @@ public class NewsViewModel extends ViewModel {
                // Toast.makeText(this, ""+t.getLocalizedMessage().toString(), Toast.LENGTH_SHORT).show();
             }
         });
+        return mutableLiveData;
     }
 
 
