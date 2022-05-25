@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+<item android:id="@+id/first" android:enabled="true" android:title="Sports" android:icon="@drawable/ic_ports"></item>
+    <item android:id="@+id/second" android:enabled="true" android:title="Technology" android:icon="@drawable/ic_baseline"></item>
+    <item android:id="@+id/third" android:enabled="true" android:title="Science" android:icon="@drawable/ic_science"></item>
+    <item android:id="@+id/foure" android:enabled="true" android:title="Science" android:icon="@drawable/ic_ports"></item>
+
+</menu>
